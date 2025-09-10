@@ -1,0 +1,9 @@
+
+# .NET / Visual Studio
+.vs/
+**/bin/
+**/obj/
+TestResult*/
+*.user
+*.suo
+*.cache
