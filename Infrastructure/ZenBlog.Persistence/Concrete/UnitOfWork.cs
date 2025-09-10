@@ -5,8 +5,8 @@ namespace ZenBlog.Persistence.Concrete;
 
 public class UnitOfWork(AppDbContext _context): IUnitOfWork
 {
-    public async Task SaveChangesAsync()
+    public async Task<bool> SaveChangesAsync()
     {
-        await _context.SaveChangesAsync();
+       return  await _context.SaveChangesAsync() > 0;
     }
 }
