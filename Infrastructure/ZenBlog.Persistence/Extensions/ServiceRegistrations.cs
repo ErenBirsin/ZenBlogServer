@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using ZenBlog.Application.Contracts.Persistence;
 using ZenBlog.Persistence.Concrete;
 using ZenBlog.Persistence.Context;
+using ZenBlog.Persistence.Interceptors;
 
 namespace ZenBlog.Persistence.Extensions;
 
@@ -14,6 +15,7 @@ public static class ServiceRegistrations
         services.AddDbContext<AppDbContext>(options =>
         {
             options.UseSqlServer(configuration.GetConnectionString("SqlConnection"));
+            options.AddInterceptors(new AuditDbContextInterceptor());
         });
 
         services.AddScoped<IUnitOfWork, UnitOfWork>();

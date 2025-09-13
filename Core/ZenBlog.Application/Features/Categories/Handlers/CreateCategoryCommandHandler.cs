@@ -14,6 +14,6 @@ public class CreateCategoryCommandHandler(IRepository<Category> _repository,IUni
         var category = _mapper.Map<Category>(request);
         await _repository.CreateAsync(category);
         var result = await _unitOfWork.SaveChangesAsync();
-        return result ? BaseResult<bool>.Success(result) : BaseResult<bool>.Fail();
+        return result ? BaseResult<bool>.Success(result) : BaseResult<bool>.Fail("Category couldn't be added");
     }
 }
