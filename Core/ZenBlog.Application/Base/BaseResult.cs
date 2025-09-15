@@ -1,5 +1,6 @@
 ﻿
 
+using Microsoft.AspNetCore.Identity;
 using System.Text.Json.Serialization;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -30,6 +31,15 @@ public class BaseResult<T>
     public static BaseResult<T> Fail()
     {
         return new BaseResult<T> { Errors = [new Error { ErrorMessage = "an Unexpected Error Occured" }] };
+    }
+
+    public static BaseResult<T> Fail(IEnumerable<IdentityError> errors)
+    {
+        return new BaseResult<T>
+        {
+            Errors = (from error in errors
+                      select new Error { PropertyName = error.Code,ErrorMessage = error.Description})
+        };
     }
 
     public static BaseResult<T> Fail(IEnumerable<string> errors)
