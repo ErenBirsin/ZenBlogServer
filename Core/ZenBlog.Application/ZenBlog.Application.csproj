@@ -19,8 +19,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Comments\Commands\" />
+    <Folder Include="Features\Comments\Endpoints\" />
+    <Folder Include="Features\Comments\Validators\" />
     <Folder Include="Features\Users\Queries\" />
-    <Folder Include="Features\Users\Result\" />
   </ItemGroup>
 
 </Project>
