@@ -1,8 +1,11 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using ZenBlog.Application.Features.Blogs.Commands;
 using ZenBlog.Application.Features.Blogs.Queries;
 
-namespace ZenBlog.API.Endpoints
+namespace ZenBlog.Application.Features.Blogs.Endpoints
 {
     public static class BlogEndpoints
     {
@@ -40,6 +43,13 @@ namespace ZenBlog.API.Endpoints
                 async (Guid id, IMediator mediator) =>
                 {
                     var response = await mediator.Send(new RemoveBlogCommand(id));
+                    return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
+                });
+
+            blogs.MapGet("byCategoryId/{categoryId}",
+                async (Guid categoryId, IMediator mediator) =>
+                {
+                   var response = await mediator.Send(new GetBlogsByCategoryIdQuery(categoryId));
                     return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
                 });
         }

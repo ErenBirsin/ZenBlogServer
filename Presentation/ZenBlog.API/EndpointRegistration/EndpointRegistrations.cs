@@ -1,4 +1,7 @@
-﻿namespace ZenBlog.API.Endpoints.Registration
+﻿using ZenBlog.Application.Features.Categories.Endpoints;
+using ZenBlog.Application.Features.Blogs.Endpoints;
+using ZenBlog.Application.Features.Users.Endpoints;
+namespace ZenBlog.API.EndpointRegistration
 {
     public static class EndpointRegistrations
     {

@@ -4,7 +4,6 @@ using ZenBlog.Application.Features.Blogs.Result;
 
 namespace ZenBlog.Application.Features.Blogs.Queries
 {
-    public record GetBlogsQuery : IRequest<BaseResult<List<GetBlogsQueryResult>>>
-    {
-    }
+    public record GetBlogsByCategoryIdQuery(Guid CategoryId) : IRequest<BaseResult<List<GetBlogsByCategoryIdQueryResult>>>;
+   
 }

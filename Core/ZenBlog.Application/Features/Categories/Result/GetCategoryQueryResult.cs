@@ -1,7 +1,7 @@
 ﻿
 using ZenBlog.Application.Base;
 
-namespace ZenBlog.Application.Features.Categories.Results;
+namespace ZenBlog.Application.Features.Categories.Result;
 
 public class GetCategoryQueryResult :BaseDto
 {
