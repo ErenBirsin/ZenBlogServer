@@ -2,6 +2,7 @@
 using ZenBlog.Application.Features.Blogs.Endpoints;
 using ZenBlog.Application.Features.Users.Endpoints;
 using ZenBlog.Application.Features.Comments.Endpoints;
+using ZenBlog.Application.Features.SubComments.Endpoints;
 namespace ZenBlog.API.EndpointRegistration
 {
     public static class EndpointRegistrations
@@ -12,6 +13,7 @@ namespace ZenBlog.API.EndpointRegistration
             app.RegisterBlogEndpoints();
             app.RegisterUserEndpoints();
             app.RegisterCommentEndpoints();
+            app.RegisterSubCommentEndPoints();
         }
     }
 }
