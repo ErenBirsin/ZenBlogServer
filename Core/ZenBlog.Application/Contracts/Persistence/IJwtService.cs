@@ -4,6 +4,6 @@ namespace ZenBlog.Application.Contracts.Persistence
 {
     public interface IJwtService
     {
-        Task<GetLoginResponse> GenerateTokenAsync(GetUsersQueryResult result);
+        Task<GetLoginQueryResult> GenerateTokenAsync(GetUsersQueryResult result);
     }
 }
