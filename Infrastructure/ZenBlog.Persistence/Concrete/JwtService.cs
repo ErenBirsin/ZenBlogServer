@@ -25,7 +25,7 @@ namespace ZenBlog.Persistence.Concrete
             {
                new Claim(type:JwtRegisteredClaimNames.Name,user.UserName),
                new Claim(type:JwtRegisteredClaimNames.Sub,user.Id),
-               new Claim(type:JwtRegisteredClaimNames.Email,user.Id),
+               new Claim(type:JwtRegisteredClaimNames.Email,user.Email),
                new Claim(type:"fullName",string.Join(" ",user.FirstName,user.LastName)),
             };
             JwtSecurityToken jwtSecurityToken = new(
