@@ -9,7 +9,7 @@ namespace ZenBlog.Application.Base;
 public class BaseResult<T>
 {
     public T? Data { get; set; }
-    public IEnumerable<Error>? Errors { get; set; }
+    public IEnumerable<object>? Errors { get; set; }
 
     [JsonIgnore]
     public bool IsSuccess => Errors == null || !Errors.Any();
