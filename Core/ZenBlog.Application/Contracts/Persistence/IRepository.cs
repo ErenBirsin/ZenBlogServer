@@ -6,6 +6,7 @@ namespace ZenBlog.Application.Contracts.Persistence;
 public interface IRepository<TEntity> where TEntity : BaseEntity
 {
     Task<List<TEntity>> GetAllAsync();
+    Task<List<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> filter);
     IQueryable<TEntity> GetQuery();
     Task<TEntity> GetByIdAsync(Guid id);
     Task CreateAsync(TEntity entity);
