@@ -6,8 +6,9 @@ namespace ZenBlog.Application.Features.Comments.Result
 {
     public class GetCommentByIdQueryResult : BaseDto
     {
-        public string UserId { get; set; }
-        public GetUsersQueryResult User { get; set; }
+        public string FirstName { get; init; }
+        public string LastName { get; init; }
+        public string Email { get; init; }
         public string Body { get; set; }
         public DateTime CommentDate { get; set; }
         // public virtual IList<SubComment> SubComments { get; set; }
