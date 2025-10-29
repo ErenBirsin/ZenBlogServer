@@ -18,7 +18,7 @@ public static class CategoryEndpoints
             var response = await mediator.Send(new GetCategoryQuery());
 
             return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
-        });
+        }).AllowAnonymous();
 
         categories.MapPost(string.Empty,
             async (CreateCategoryCommand command, IMediator mediator) =>

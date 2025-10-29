@@ -17,7 +17,7 @@ namespace ZenBlog.Application.Features.ContactInfos.Endpoints
             {
                 var result = await mediator.Send(new Query.GetContactInfosQuery());
                 return result.IsSuccess ? Results.Ok(result) : Results.BadRequest(result);
-            });
+            }).AllowAnonymous();
 
             contactInfos.MapGet("{id}", async (IMediator mediator, Guid id) =>
             {
