@@ -1,8 +1,6 @@
-﻿using ZenBlog.Application.Base;
-
-namespace ZenBlog.Application.Features.Messages.Result
+﻿namespace ZenBlog.Application.Features.Messages.Result
 {
-    public class GetMessageByIdQueryResult : BaseDto
+    public class GetUnreadMessagesQueryResult
     {
         public string Name { get; set; }
         public string Email { get; set; }

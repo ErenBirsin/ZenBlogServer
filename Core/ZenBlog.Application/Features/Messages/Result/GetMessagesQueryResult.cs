@@ -8,6 +8,6 @@ namespace ZenBlog.Application.Features.Messages.Result
         public string Email { get; set; }
         public string Subject { get; set; }
         public string MessageBody { get; set; }
-        public bool IsRead { get; set; } = false;
+        public bool IsRead { get; set; } 
     }
 }
