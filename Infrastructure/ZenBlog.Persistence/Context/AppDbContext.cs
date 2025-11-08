@@ -12,6 +12,8 @@ namespace ZenBlog.Persistence.Context
         public DbSet<Message> Messages { get; set; }
         public DbSet<Social> Socials { get; set; }
 
+        public DbSet<About> Abouts { get; set; }
+
 
     }
 }
